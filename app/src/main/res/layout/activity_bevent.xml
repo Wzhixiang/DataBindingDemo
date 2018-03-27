@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="handler"
+            type="com.wzx.databindingdemo.MyHandlers"/>
+
+        <variable
+            name="task"
+            type="com.wzx.databindingdemo.Task"/>
+
+        <variable
+            name="presenter"
+            type="com.wzx.databindingdemo.Presenter"/>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="事件处理有两种方式：1.方法引用；2.监听绑定"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_use_fuction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{handler::onClick}"
+            android:padding="10dp"
+            android:text="1.方法引用"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"/>
+
+        <TextView
+            android:id="@+id/tv_use_listener"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> presenter.onDoTask(task)}"
+            android:padding="10dp"
+            android:text="2.监听绑定"
+            app:layout_constraintTop_toBottomOf="@+id/tv_use_fuction"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

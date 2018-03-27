@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.support.v7.widget.RecyclerView.LayoutManager"/>
+
+        <import type="android.support.v7.widget.RecyclerView.Adapter"/>
+
+        <variable
+            name="layoutManager"
+            type="LayoutManager"/>
+
+        <variable
+            name="adapter"
+            type="Adapter"/>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.wzx.databindingdemo.ui.MainActivity">
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:adapter="@{adapter}"
+            app:layoutManager="@{layoutManager}"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
+
